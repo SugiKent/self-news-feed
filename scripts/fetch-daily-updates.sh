@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 設定
-OUTPUT_JSON="/workspace/self-news-feed/self-news-feed/src/data/daily_updates.json"
+OUTPUT_JSON="self-news-feed/src/data/daily_updates.json"
 LOG_FILE="/tmp/github_daily_updates.log"
 SINCE=$(date -u -d "14 days ago" +"%Y-%m-%dT%H:%M:%SZ")
 
