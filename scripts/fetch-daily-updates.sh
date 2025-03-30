@@ -3,7 +3,7 @@
 # 設定
 OUTPUT_JSON="self-news-feed/src/data/daily_updates.json"
 LOG_FILE="/tmp/github_daily_updates.log"
-SINCE=$(date -u -d "24 hours ago" +"%Y-%m-%dT%H:%M:%SZ")
+SINCE=$(date -u -d "14 days ago" +"%Y-%m-%dT%H:%M:%SZ")
 
 # ログ初期化
 echo "=== GitHub Daily Updates ===" > $LOG_FILE
@@ -35,7 +35,7 @@ for repo in $REPOS; do
         tag: .tag_name,
         date: .published_at,
         url: .html_url,
-        summary: (.body | split("\n")[0] | if length > 0 then . else "No description" end)
+        summary: (.body | if length > 0 then . else "No description" end)
       }]')
   
   echo "Found $(echo "$RELEASES" | jq 'length') new releases" >> $LOG_FILE
