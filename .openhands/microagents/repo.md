@@ -5,7 +5,7 @@
 
 # Git
 
-- branch は gh-pages がベースです
+branch は `gh-pages` がベースです。commit や pull はこの branch から行ってください
 
 # ドキュメント
 
